@@ -12,7 +12,7 @@ if [ -d "~/.vim" ]; then
 fi
 
 echo "create new vimrc..."
-mv ../.vim ~/.vim
+mv . ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 
 vi +PlugInstall! +qall
