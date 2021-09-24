@@ -3,12 +3,12 @@ echo "Install vim configurations..."
 
 echo "Backup vim config..."
 
-if [ -f "$HOME/.vimrc" ]; then
-    mv ~/.vimrc ~/.vimrc.`bak`
+if [ -e "$HOME/.vimrc" ]; then
+    mv ~/.vimrc ~/.vimrc.bak
 fi
 
 if [ -d "$HOME/.vim" ]; then
-    mv ~/.vim ~/.vim.`bak`
+    mv ~/.vim ~/.vim.bak
 fi
 
 echo "Create new vim config..."
