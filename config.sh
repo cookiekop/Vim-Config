@@ -1,18 +1,21 @@
 #!/bin/sh
 echo "Install vim configurations..."
 
-echo "backup vim config"
+echo "Backup vim config..."
 
-if [ -f "~/.vimrc" ]; then
-    mv ~/.vimrc ~/.vimrc.'bak'
+if [ -f "$HOME/.vimrc" ]; then
+    mv ~/.vimrc ~/.vimrc.`bak`
 fi
 
-if [ -d "~/.vim" ]; then
+if [ -d "$HOME/.vim" ]; then
     mv ~/.vim ~/.vim.`bak`
 fi
 
-echo "create new vimrc..."
-mv 'ls' ~/.vim/
+echo "Create new vim config..."
+mkdir ~/.vim
+cp -r * ~/.vim/
 ln -s ~/.vim/vimrc ~/.vimrc
 
 vi +PlugInstall! +qall
+
+echo "Done!"
